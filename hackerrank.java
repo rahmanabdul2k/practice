@@ -158,3 +158,93 @@ class Solution{
         in.close();
     }
 }
+
+        8 java datatypes
+
+import java.util.*;
+import java.io.*;
+
+
+
+class Solution{
+    public static void main(String []argh)
+    {
+
+
+
+        Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();
+
+        for(int i=0;i<t;i++)
+        {
+
+            try
+            {
+                long x=sc.nextLong();
+                System.out.println(x+" can be fitted in:");
+                if(x>=-128 && x<=127)
+                System.out.println("* byte");
+                if(x>=Short.MIN_VALUE && x<=Short.MAX_VALUE)
+				{System.out.println("* short");}
+                if(x>=Integer.MIN_VALUE && x<=Integer.MAX_VALUE) 
+				{System.out.println("* int");}
+                if(x>=Long.MIN_VALUE && x<=Long.MAX_VALUE) 
+				{System.out.println("* long");}
+            }
+            catch(Exception e)
+            {
+                System.out.println(sc.next()+" can't be fitted anywhere.");
+            }
+
+        }
+    }
+}
+
+        9 java end of file
+
+import java.util.*;
+
+
+public class Solution {
+
+    public static void main(String[] args)  {
+        Scanner sc = new Scanner(System.in);
+        int i=1;
+        while (sc.hasNext()) {
+            String s=sc.nextLine();
+            System.out.println(i + " " + s);
+            i++;
+        }
+    }
+}
+
+           10 Java Static Initializer Block
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+static int B,H;
+static boolean flag = true;
+static{ //ONLY STATIC BLOCKS CAN ACCESS AND MODIFY STATIC VARIABLES.
+    Scanner sc = new Scanner(System.in);
+    B = sc.nextInt();
+    H = sc.nextInt();
+    if(B<=0 || H<=0)
+    {
+        flag = false;
+        System.out.println("java.lang.Exception: Breadth and height must be positive");
+    }
+}
+public static void main(String[] args){
+		if(flag){
+			int area=B*H;
+			System.out.print(area);
+		}
+		
+	}//end of main
+
+}//end of class
